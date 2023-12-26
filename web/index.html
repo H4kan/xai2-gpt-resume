@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume builder</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Resume builder</h1>
+        <h2>Powered by ChatGPT</h2>
+    </header>
+    <section>
+        <div>
+            <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" id="fileInput" name="file" accept="application/pdf" onchange="submitForm()">
+                <button type="button" class="custom-button" onclick="triggerUpload()">Upload resume (PDF)</button>
+            </form>
+            <p>None of your data are stored.</p>
+        </div>    
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume analysis</title>
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static_files', path='./templates/display.css') }}">
+</head>
+<body>
+    <section id="analysis">
+        <textarea rows="4" cols="50" readonly>
+            {{data.fText}}
+        </textarea>
+    </section>
+    <section id="preview">
+        <iframe src="{{ url_for('serve_pdf', pdf_id=data.processed_path) }}" type="application/pdf">
+    </section>
+</body>
+</html>
