@@ -25,45 +25,45 @@ class ChatBot:
     def get_highlights(self, resume_text):
         return [
             {
-              'page_num': 0,
+              'page_num': 1,
               'text': 'Zainteresowania',
-              'occurence': 1,
+              'occurrence': 1,
               'highlight': 'Jakas uwaga'
             },
             {
-              'page_num': 0,
+              'page_num': 1,
               'text': 'Anime',
-              'occurence': 2,
+              'occurrence': 2,
               'highlight': 'Jakas uwaga 2'
             },
             {
-              'page_num': 0,
+              'page_num': 1,
               'text': 'Teoria grafów',
-              'occurence': 1,
+              'occurrence': 1,
               'highlight': 'Jakas uwaga 3'
             },
             {
-              'page_num': 1,
+              'page_num': 2,
               'text': 'coś',
-              'occurence': 1,
+              'occurrence': 1,
+              'highlight': 'Jakas uwaga 3'
+            },
+            {
+              'page_num': 2,
+              'text': 'cośn',
+              'occurrence': 1,
+              'highlight': 'Jakas uwaga 3'
+            },
+            {
+              'page_num': 4,
+              'text': 'Anime',
+              'occurrence': 1,
               'highlight': 'Jakas uwaga 3'
             },
             {
               'page_num': 1,
-              'text': 'cośn',
-              'occurence': 1,
-              'highlight': 'Jakas uwaga 3'
-            },
-            {
-              'page_num': 3,
               'text': 'Anime',
-              'occurence': 1,
-              'highlight': 'Jakas uwaga 3'
-            },
-            {
-              'page_num': 0,
-              'text': 'Anime',
-              'occurence': 5,
+              'occurrence': 5,
               'highlight': 'Jakas uwaga 3'
             },
         ]

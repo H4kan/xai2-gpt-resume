@@ -1,9 +1,12 @@
-from flask import Flask, request, render_template, redirect, url_for, send_from_directory, Response
-from werkzeug.utils import secure_filename
+from flask import Flask, request, render_template, redirect, url_for, after_this_request, send_file, send_from_directory
+from werkzeug.utils import secure_filename, safe_join
 import os
 import uuid
 from pdf.processing import PdfProcessor
 from chatbot.chatbot import ChatBot
+import threading
+import time
+
 
 app = Flask(__name__, template_folder='web/templates')
 app.config['UPLOAD_FOLDER'] = './tmp'
@@ -45,6 +48,7 @@ def display_data(id):
     fText = processor.scrap_text()
     hls = chatbot.get_highlights(fText)
     processed_path = processor.generate_highlights(hls)
+    delayed_delete(file_path)
 
     data = {
         'fText': fText,
@@ -59,15 +63,33 @@ def serve_pdf(pdf_id):
     if '/' in pdf_id or '\\' in pdf_id:
         return "Invalid file path", 400
 
-    file_path = os.path.join(app.config['UPLOAD_FOLDER'], pdf_id + '.pdf')
+    file_path = safe_join(app.config['UPLOAD_FOLDER'], pdf_id + '.pdf')
+
     if os.path.exists(file_path) and file_path.endswith('.pdf'):
-        return send_from_directory(app.config['UPLOAD_FOLDER'], pdf_id + '.pdf', mimetype='application/pdf')
+        # Function to delete the file after sending it
+        @after_this_request
+        def cleanup(response):
+            delayed_delete(file_path)
+            return response
+
+        # Send the file and ensure it's deleted after the request
+        return send_file(file_path, mimetype='application/pdf')
     else:
         return "File not found", 404
+    
+def delayed_delete(file_path, delay=5):
+    """
+    Delete the file after a specified delay.
+    """
+    def task():
+        time.sleep(delay)  # Delay in seconds
+        try:
+            os.remove(file_path)
+        except Exception as error:
+            app.logger.error("Error removing file: %s", error)
 
-def process_pdf(file_path):
-    # Your PDF processing and data extraction logic
-    return "Extracted Data from PDF"
+    thread = threading.Thread(target=task)
+    thread.start()
 
 
 if __name__ == '__main__':

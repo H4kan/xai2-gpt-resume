@@ -3,15 +3,25 @@
 <head>
     <title>Resume analysis</title>
     <link rel="stylesheet" type="text/css"  href="{{ url_for('static_files', path='./templates/display.css') }}">
+    <script>
+        var data = {{ data | tojson }};
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static_files', path='./templates/display.js') }}"></script>
 </head>
 <body>
-    <section id="analysis">
-        <textarea rows="4" cols="50" readonly>
-            {{data.fText}}
-        </textarea>
-    </section>
-    <section id="preview">
-        <iframe src="{{ url_for('serve_pdf', pdf_id=data.processed_path) }}" type="application/pdf">
-    </section>
+    <a href="/" class="bck-btn">Back</a>
+    <h1>Resume analysis</h1>
+    <main>
+        <section id="analysis">
+            <div id="scrap-text">
+            </div>
+            <div id="hl-text">
+            </div>
+        </section>
+        <section id="preview">
+            <iframe src="{{ url_for('serve_pdf', pdf_id=data.processed_path) }}" type="application/pdf">
+        </section>
+    </main>
 </body>
 </html>

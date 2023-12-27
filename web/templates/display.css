@@ -1,24 +1,77 @@
 
 body {
+    font-family: Arial, sans-serif;
+    background-image: url('../css/bgi.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+    color:antiquewhite;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+main {
     display: flex;
     justify-content: space-evenly;
 }
 
 section {
     margin-top: 10vh;
-    background-color: red;
     width: 40%;
     height: 70vh;
 }
 
-#analysis>textarea {
+
+#scrap-text {
+    height: 80%;
+}
+
+#analysis>div {
+    background-color: #fdfdfd;
+    color: 	#010101;
+    overflow-y: scroll;
     font-size: 20px;
     padding: 10px;
     width: 100%;
-    height: 100%;
+}
+
+#hl-text {
+    border-top: 2px solid black;
+    height: 20%;
 }
 
 iframe {
     width: 100%;
     height: 100%;
+}
+
+.bck-btn {
+    position: absolute;
+    font-size: 20px;
+    text-transform: uppercase;
+    top: 5%;
+    left: 5%;
+    cursor: pointer;
+    outline: none;
+    background: none;
+    color: antiquewhite;
+    transition: .3s;
+    border: none;
+}
+
+.bck-btn:hover {
+    text-decoration: underline;
+}
+
+.hl-span {
+    background-color: yellow;
+    cursor: pointer;
+}
+
+.hl-span:hover {
+    text-decoration: underline;
 }

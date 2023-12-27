@@ -14,24 +14,10 @@ gold = (1, 1, 0)
 green = (0, 1, 0)
 
 
-# def print_descr(annot):
-#     """Print a short description to the right of each annot rect."""
-#     annot.parent.insert_text(
-#         annot.rect.br + (10, -5), "%s annotation" % annot.type[1], color=red
-#     )
-
-
-# doc = fitz.open('./samples/samplecv.pdf')
-
-# for page in doc:
-
-#     rl = page.search_for(highlight, quads=True)  # need a quad b/o tilted text
-#     annot = page.add_highlight_annot(rl[0])
-#     print_descr(annot)
-
-
-# doc.save(__file__.replace(".py", "-%i.pdf" % page.rotation), deflate=True)
-
+def print_descr(annot, text):
+    annot.parent.insert_text(
+        annot.rect.br + (10, -5), text, color=red
+    )
 
 class PdfProcessor:
     def __init__(self, file):
@@ -51,13 +37,14 @@ class PdfProcessor:
     
     def generate_highlights(self, highlights):
         for h in highlights:
-            if len(self.doc) <= h['page_num']:
+            if len(self.doc) <= h['page_num'] - 1:
                 continue
-            page = self.doc[h['page_num']]
+            page = self.doc[h['page_num'] - 1]
             rl = page.search_for(h['text'], quads=True)
-            if len(rl) <= h['occurence'] - 1:
+            if len(rl) <= h['occurrence'] - 1:
                 continue
-            page.add_highlight_annot(rl[h['occurence'] - 1])
+            annot = page.add_highlight_annot(rl[h['occurrence'] - 1])
+            print_descr(annot, h['highlight'])
 
         unique_id = str(uuid.uuid4())
         self.doc.save('tmp/' + unique_id + '.pdf')
