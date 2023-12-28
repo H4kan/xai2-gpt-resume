@@ -17,12 +17,14 @@
 
 # print(completion.choices[0].message)
 
+import time
 
 class ChatBot:
     def __init__(self):
         self.client = ""
 
     def get_highlights(self, resume_text):
+        time.sleep(5)
         return [
             {
               'page_num': 1,
