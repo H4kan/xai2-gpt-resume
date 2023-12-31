@@ -57,7 +57,8 @@ class ChatBot:
           )
           # print(completion.choices[0].message.content)
           try:
-            response = json.loads(completion.choices[0].message.content)
+            proc_response = self.process_response(completion.choices[0].message.content)
+            response = json.loads(proc_response)
           except json.JSONDecodeError as e:
              i = i + 1
              continue
@@ -66,7 +67,12 @@ class ChatBot:
         print(f"ChatGPT failed miserably")
         return [] 
 
-
+    def process_response(self, response):
+       start_idx = response.find("[")
+       end_idx = response.rfind("]")
+       if start_idx == -1 or end_idx == -1:
+          return response
+       return response[start_idx:(end_idx+1)]
 
 
     # def get_highlights(self, resume_text):
