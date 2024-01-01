@@ -65,7 +65,24 @@ class ChatBot:
           print(f"ChatGPT completed in {i + 1} attempts")
           return response
         print(f"ChatGPT failed miserably")
-        return [] 
+        return []
+     
+    def get_pure(self, resume_text):
+          client = OpenAI()
+
+          completion = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[
+              {"role": "system", 
+                  "content": "You are a professional resume builder and a recruiter."},
+              {"role": "user", 
+                  "content": get_prompt(resume_text)}
+            ]
+          )
+          # print(completion.choices[0].message.content)
+        
+          return completion.choices[0].message.content
+
 
     def process_response(self, response):
        start_idx = response.find("[")
