@@ -6,13 +6,14 @@ from pdf.processing import PdfProcessor
 from chatbot.chatbot import ChatBot
 import threading
 import time
-
+from pdf.anonymizer import Anonymizer
 
 app = Flask(__name__, template_folder='web/templates')
 app.config['UPLOAD_FOLDER'] = './tmp'
 app.config['UNPROCESSED_FILE'] = {}
 
 chatbot = ChatBot()
+anonymizer = Anonymizer()
 
 @app.route('/')
 def index():
@@ -46,6 +47,7 @@ def display_data(id):
     file_path = app.config['UNPROCESSED_FILE'].get(id, "No data found.")
     processor = PdfProcessor(file_path)
     fText = processor.scrap_text()
+    fText = anonymizer.anonymize_text(fText)
     hls = chatbot.get_highlights(fText)
     processed_path = processor.generate_highlights(hls)
     delayed_delete(file_path)

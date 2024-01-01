@@ -17,7 +17,14 @@
                 <input type="file" id="fileInput" name="file" accept="application/pdf" onchange="submitForm()">
                 <button type="button" class="custom-button" onclick="triggerUpload()">Upload resume (PDF)</button>
             </form>
-            <p>None of your data are stored.</p>
+            <p>Please avoid using personal data.</p>
+            <div class="tooltip">
+                Learn more
+                <span class="tooltiptext">
+                    We are using advanced anonymization techniques to hide your personal data however they are not perfect.
+                    Data in the provided file are not stored but used to feed GPT model.
+                </span>
+            </div>
             <div hidden>
                 <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                 <p>Analyzing...</p>

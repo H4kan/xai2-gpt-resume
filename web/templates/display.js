@@ -18,10 +18,9 @@ $( document ).ready(function() {
     
     let pattern = /Page \d+/g;
 
-
     let splitted = data.fText.replace(/\s*\n/g, '\n').replace(/ +/g, ' ').replace(/\n\s*/g, '\n').split(pattern);
     splitted.shift();
-    console.log(splitted)
+    
     for (let i = 0; i < data.hls.length; i++)
     {
         let current_hl = data.hls[i];
