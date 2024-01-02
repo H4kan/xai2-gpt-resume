@@ -1,0 +1,68 @@
+[
+  {
+    "page_num": 1,
+    "text": "Sales Account Executive",
+    "occurrence": 1,
+    "highlight": "Consider starting with the full name and position as the header."
+  },
+  {
+    "page_num": 1,
+    "text": "Augmented reality startup with (REDACTED)+ employees and $(REDACTED) (REDACTED) revenue",
+    "occurrence": 1,
+    "highlight": "Specify the name of the augmented reality startup."
+  },
+  {
+    "page_num": 1,
+    "text": "Developed relationships with HNIs that accounted for $(REDACTED)K in earned income within (REDACTED) of employment.",
+    "occurrence": 1,
+    "highlight": "Quantify the number of relationships formed and the time frame within which the income was earned."
+  },
+  {
+    "page_num": 1,
+    "text": "Surpassed sales goals while maintaining a (REDACTED) excellent customer service record in (REDACTED), (REDACTED), and (REDACTED) (REDACTED).",
+    "occurrence": 1,
+    "highlight": "Provide specific examples of how sales goals were surpassed and how customer service was exceptional."
+  },
+  {
+    "page_num": 1,
+    "text": "Acquired key businesses via prospecting and (REDACTED) clients (REDACTED) while managing (REDACTED)+ existing accounts.",
+    "occurrence": 1,
+    "highlight": "Specify the number of clients acquired and emphasize the successful management of existing accounts."
+  },
+  {
+    "page_num": 1,
+    "text": "Created customer web demos and planned an inside sales model for selling to (REDACTED)+ SMEs and 40+ Fortune (REDACTED)0 companies over the phone.",
+    "occurrence": 1,
+    "highlight": "Highlight the strategic planning involved in creating customer web demos and emphasize the successful sales approach used for SMEs and Fortune (REDACTED)0 companies."
+  },
+  {
+    "page_num": 1,
+    "text": "Provides quality assurance and control testing for global markets",
+    "occurrence": 1,
+    "highlight": "Specify the name of the company where quality assurance and control testing is provided."
+  },
+  {
+    "page_num": 1,
+    "text": "Protected (REDACTED)+ auction items from damage and theft by being vigilant during (REDACTED) product inspections by (REDACTED) potential buyers.",
+    "occurrence": 1,
+    "highlight": "Quantify the number of auction items protected and provide specific examples of how potential theft or damage was prevented."
+  },
+  {
+    "page_num": 1,
+    "text": "Sold (REDACTED) assorted goods using the sales tricks technique to verify the authenticity of various items in (REDACTED).",
+    "occurrence": 1,
+    "highlight": "Specify the types of goods sold and provide specific examples of how the authenticity of items was verified."
+  },
+  {
+    "page_num": 1,
+    "text": "Distribution Supervisor, (REDACTED), (REDACTED), (REDACTED) – (REDACTED)",
+    "occurrence": 1,
+    "highlight": "Specify the name of the company where the distribution supervisor role was held."
+  },
+  {
+    "page_num": 2,
+    "text": "Associate of Science — Business Administration",
+    "occurrence": 1,
+    "highlight": "Include the full name of the University where the degree was obtained."
+  }
+]

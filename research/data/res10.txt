@@ -1,0 +1,20 @@
+[
+  {
+    "page_num": 1,
+    "text": "First Last\nSales Account Executive\n(REDACTED), (REDACTED)234-456-789 • (EMAIL REDACTED) •\n(URL REDACTED)\n",
+    "occurrence": 1,
+    "highlight": "No enhancement needed."
+  },
+  {
+    "page_num": 1,
+    "text": "WORK EXPERIENCE\n__________________________________________________________________________________\n_____________________________\n(REDACTED)\n__________________________________________________________________________________\n_____________________________\n(REDACTED), (REDACTED), (REDACTED) 06/2005\n(REDACTED)\n(REDACTED)\n",
+    "occurrence": 1,
+    "highlight": "Enhancement: Provide more details about the work experience, including job responsibilities, achievements, and quantifiable results."
+  },
+  {
+    "page_num": 1,
+    "text": "Hard Skills: Business Planning (Advanced), Marketing (Experienced), (REDACTED), (REDACTED),\nNegotiation\nTechniques: Business Development, Sales Management, (REDACTED), Marketing Strategy, Public\nRelations\n",
+    "occurrence": 1,
+    "highlight": "Enhancement: Organize the skills section into a bullet point format for better readability. Provide specific examples of how these skills were used in previous roles."
+  }
+]
