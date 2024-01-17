@@ -12,6 +12,10 @@ app = Flask(__name__, template_folder='web/templates')
 app.config['UPLOAD_FOLDER'] = './tmp'
 app.config['UNPROCESSED_FILE'] = {}
 
+# Ensure upload directory exists
+if not os.path.exists(app.config['UPLOAD_FOLDER']):
+    os.makedirs(app.config['UPLOAD_FOLDER'])
+
 chatbot = ChatBot()
 anonymizer = Anonymizer()
 
